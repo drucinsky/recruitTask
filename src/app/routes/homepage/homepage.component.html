@@ -1,0 +1,239 @@
+<div
+  class="
+    container-fluid
+    d-flex
+    flex-column
+    justify-content-center
+    align-items-center
+    pb-5
+  "
+>
+  <img src="assets/logo.png" class="card-img-top my-5" alt="logo" />
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row">
+        <h1 class="title col-lg-12">Wypełnij formularz</h1>
+      </div>
+      <div class="row">
+        <h2 class="subtitle col-lg-12 px-0 my-1">
+          Skontaktujemy się z Tobą najszybciej jak to będzie możliwe.
+        </h2>
+      </div>
+      <form class="mt-5 mb-0" [formGroup]="recruitForm" (submit)="submitForm()">
+        <div class="row my-2">
+          <label class="label col-lg-12 px-0">
+            <input
+              required
+              type="text"
+              class="form-control"
+              placeholder="np. Apple"
+              formControlName="name"
+              [ngClass]="{
+                border:
+                  this.recruitForm.get('name')?.hasError('required') &&
+                  this.recruitForm.get('name')?.dirty
+              }"
+            />
+            <span class="title-label label-style"
+              >Nazwa fimy / Imię i nazwisko
+              <span class="text-danger">*</span></span
+            >
+          </label>
+        </div>
+        <div class="row my-2">
+          <label class="label col-lg-12 px-0">
+            <input
+              required
+              type="text"
+              class="form-control"
+              placeholder="123-45-67-890"
+              formControlName="nip"
+              [ngClass]="{
+                border:
+                  (this.recruitForm.get('nip')?.hasError('required') ||
+                    recruitForm.get('nip')?.hasError('validateNip')) &&
+                  this.recruitForm.get('nip')?.dirty
+              }"
+            />
+            <span class="title-label label-style"
+              >Numer NIP <span class="text-danger">*</span></span
+            >
+          </label>
+        </div>
+        <div class="row my-2">
+          <label class="label col-lg-12 px-0">
+            <input
+              required
+              type="email"
+              class="form-control"
+              placeholder="np. example@example.pl"
+              formControlName="email"
+              [ngClass]="{
+                border:
+                  (this.recruitForm.get('email')?.hasError('required') ||
+                    this.recruitForm.get('email')?.hasError('email')) &&
+                  this.recruitForm.get('email')?.dirty
+              }"
+            />
+            <span class="title-label label-style"
+              >E-mail <span class="text-danger">*</span></span
+            >
+          </label>
+        </div>
+        <div class="row my-2">
+          <label class="label col-lg-12 px-0">
+            <input
+              required
+              type="text"
+              class="form-control"
+              placeholder="123 456 789"
+              formControlName="phoneNumber"
+              [ngClass]="{
+                border:
+                  this.recruitForm.get('phoneNumber')?.hasError('pattern') &&
+                  this.recruitForm.get('phoneNumber')?.dirty
+              }"
+            />
+            <span class="title-label label-style">Numer telefonu</span>
+          </label>
+        </div>
+        <div class="row my-2">
+          <label class="label col-lg-12 px-0">
+            <select
+              class="form-select form-control"
+              formControlName="subject"
+              [ngClass]="{
+                border:
+                  this.recruitForm.get('subject')?.hasError('required') &&
+                  this.recruitForm.get('subject')?.dirty
+              }"
+            >
+              <option class="label-style" value="cooperation" selected>Współpraca</option>
+              <option class="label-style" value="option2">Opcja 2</option>
+              <option class="label-style" value="option3">Opcja 3</option>
+            </select>
+            <span class="title-label label-style"
+              >Temat <span class="text-danger">*</span></span
+            >
+          </label>
+        </div>
+        <div class="row my-2">
+          <label
+            class="
+              label
+              col-lg-12
+              form-control
+              py-2
+              d-flex
+              justify-content-between
+            "
+          >
+            <span class="label-style my-auto"
+              >Czy posiadasz prawo jazdy kat. B?</span
+            >
+            <div class="group-check ml-auto my-auto col-lg-4">
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input my-auto"
+                  type="radio"
+                  [value]="true"
+                  formControlName="driveLicense"
+                />
+                <label
+                  class="form-check-label my-auto"
+                  [ngClass]="{
+                    'text-muted': !this.recruitForm.get('driveLicense')?.value
+                  }"
+                  >Tak</label
+                >
+              </div>
+              <div class="form-check form-check-inline my-auto">
+                <input
+                  class="form-check-input my-auto"
+                  type="radio"
+                  [value]="false"
+                  formControlName="driveLicense"
+                />
+                <label
+                  class="form-check-label my-auto"
+                  [ngClass]="{
+                    'text-muted': this.recruitForm.get('driveLicense')?.value
+                  }"
+                  >Nie</label
+                >
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="row my-2">
+          <label class="label col-lg-12 px-0">
+            <textarea
+              required
+              type="text"
+              class="form-control"
+              rows="4"
+              placeholder="Dzień dobry"
+              formControlName="message"
+            ></textarea>
+            <span class="title-label label-style">Treść wiadomości</span>
+          </label>
+        </div>
+        <div class="row mt-4 mb-2">
+          <div class="col-12 d-flex align-items-center px-0">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [value]="allAgree"
+              (change)="acceptAllAgreement()"
+            />
+            <label class="form-check-label"> Zaznacz wszystkie zgody </label>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-12 d-flex align-items-center px-0">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="true"
+              formControlName="dataProcessingAgree"
+            />
+            <label class="form-check-label text-muted ml-auto">
+              Wyrażam zgodę na przetwarzanie moich danych osobowych podanych
+              przeze mnie w powyższym formularzu w celu kontaktowym.
+              <span class="text-danger">*</span>
+            </label>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-12 d-flex align-items-center px-0">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="true"
+              formControlName="marketingAgree"
+            />
+            <label class="form-check-label text-muted">
+              Wyrażam zgodę na kontakt telefoniczny w sprawach marketingowych
+            </label>
+          </div>
+        </div>
+        <div
+          class="row"
+          *ngIf="
+            this.recruitForm.get('dataProcessingAgree')?.hasError('required') &&
+            this.recruitForm.get('dataProcessingAgree')?.dirty
+          "
+        >
+          <small class="text-danger"
+            >* Zgoda na przetwarzanie danych jest wymagana</small
+          >
+        </div>
+        <div class="row mt-4">
+          <button class="btn btn-success mx-auto col-lg-6" type="submit">
+            Wyślij wiadomość
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

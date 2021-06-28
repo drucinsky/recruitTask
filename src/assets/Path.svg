@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="10px" viewBox="0 0 13 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="homepage" transform="translate(-726.000000, -1080.000000)" fill="#FB660A" fill-rule="nonzero" stroke="#FB660A">
+            <g id="form" transform="translate(670.000000, 166.000000)">
+                <g id="Group-2-Copy" transform="translate(50.000000, 906.000000)">
+                    <path d="M17.8594567,9.2582519 C17.5154682,8.91380747 16.9568915,8.91402462 16.6124471,9.2582519 L11.0000353,14.8708808 L8.50556007,12.3764273 C8.16111564,12.0319829 7.60277776,12.0319829 7.25833333,12.3764273 C6.91388889,12.7208718 6.91388889,13.2792097 7.25833333,13.6236541 L10.3762916,16.7416124 C10.5484053,16.913726 10.77409,17 10.9997964,17 C11.2255029,17 11.4514047,16.9139432 11.6235184,16.7416124 L17.8594567,10.5054569 C18.2039011,10.1612514 18.2039011,9.60267462 17.8594567,9.2582519 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

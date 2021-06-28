@@ -1,0 +1,126 @@
+.card-img-top {
+  height: 46px;
+  width: 136.79px;
+}
+.card {
+  max-width: 580px;
+  padding: 50px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 40px 40px 0 rgba(103, 103, 103, 0.05);
+}
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.333;
+  color: #1e1d1d;
+  text-align: center;
+}
+.subtitle {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.563;
+  color: #949494;
+  text-align: center;
+}
+
+.form-select {
+  font-weight: 500;
+  font-size: 15px;
+  color: #1e1d1d;
+}
+.form-control {
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 10px;
+  min-height: 73px;
+  padding: 30px 15px 15px 20px;
+  &:focus {
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.1);
+  }
+  &::placeholder {
+    opacity: 0.6;
+    font-weight: 500;
+    font-size: 15px;
+    color: #949494;
+  }
+}
+.label {
+  position: relative;
+  > .label-style {
+    font-weight: 700;
+    font-size: 12px;
+    color: #1e1d1d;
+  }
+  > .title-label {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    > .star {
+      font-weight: 700;
+      font-size: 12px;
+      color: #fb660a;
+      text-align: left;
+    }
+  }
+  > .input {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+  }
+}
+.form-check-input {
+  min-width: 26px;
+  height: 26px;
+  background-color: #ffffff;
+  border: 3px solid #f5f5f5;
+  margin-right: 10px;
+  &:checked {
+    opacity: 1;
+    border: 3px solid #fb660a;
+  }
+}
+.form-check-input:checked[type="radio"] {
+  background-image: url("/assets/radio.svg");
+  background-size: 10px;
+}
+.form-check-input:checked[type="checkbox"] {
+  background-image: url("/assets/Path.svg");
+  background-size: 10px;
+}
+.form-check-label {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.btn-success {
+  height: 60px;
+  background-color: #40de4e;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 30px 0 rgba(64, 222, 78, 0.3);
+  font-weight: 700;
+  font-size: 15px;
+}
+.activeRadioLabel {
+  color: #1e1d1d;
+}
+.border {
+  border: 3px solid rgb(255, 69, 69) !important;
+}
+.text-danger {
+  color: rgb(255, 69, 69) !important;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .card {
+    padding: 25px;
+  }
+}
